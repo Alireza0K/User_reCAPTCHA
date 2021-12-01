@@ -14,25 +14,32 @@ include "navbar.php";
     <table class="table">
     <thead>
         <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col" class="">id</th>
+        <th scope="col">User name</th>
+        <th scope="col">Email</th>
+        <th scope="col">access</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td class="table-secondary">Mark</td>
+            <td class="table-success">Mark@gmail.com</td>
+            <td>admin</td>
         </tr>
     </tbody>
     </table>
+    <div class="col d-flex justify-content-center">
+        <nav aria-label="..." dir="ltr">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#">1</a>
+                </li>
+
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">2</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
