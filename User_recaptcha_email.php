@@ -9,6 +9,8 @@
 */
 define("USER_RECAPTCH",plugin_dir_path(__FILE__)."include/");
 define("USER_RECAPTCH_ASSETS",plugin_dir_url(__FILE__)."assets/");
+define("USER_RECAPTCH_TEMPLATE",plugin_dir_path(__FILE__)."template/");
 if (is_admin()) {
     include USER_RECAPTCH . "admin/menu.php";
+    include USER_RECAPTCH . "admin/register_all_assets_in_admin.php";
 }
