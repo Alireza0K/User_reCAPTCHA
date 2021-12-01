@@ -26,5 +26,5 @@ function main_menus()
 
 function main_menu()
 {
-    
+    include USER_RECAPTCH_TEMPLATE ."admin/main_menu.php";
 }
