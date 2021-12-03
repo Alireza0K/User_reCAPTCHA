@@ -29,16 +29,15 @@ include "navbar.php";
         </tr>
     </tbody>
     </table>
+   
     <div class="col d-flex justify-content-center">
         <nav aria-label="..." dir="ltr">
             <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#">1</a>
-                </li>
-
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">2</a>
-                </li>
+                <?php for($i=1; $i <= $number_of_pagination; $i++):?>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link" href="<?php echo add_query_arg(["page"=>"main-menu","item"=>"$i"]); ?>" > <?php echo $i;?> </a>
+                    </li>
+                <?php endfor?>
             </ul>
         </nav>
     </div>
