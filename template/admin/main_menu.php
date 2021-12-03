@@ -17,16 +17,16 @@ include "navbar.php";
         <th scope="col" class="">id</th>
         <th scope="col">User name</th>
         <th scope="col">Email</th>
-        <th scope="col">access</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td class="table-secondary">Mark</td>
-            <td class="table-success">Mark@gmail.com</td>
-            <td>admin</td>
-        </tr>
+        <?php foreach ($pagination_complete as $user_data):?>
+            <tr>
+                <th scope="row"><?php echo $user_data->ID; ?></th>
+                <td class="table-secondary"><?php echo $user_data->user_nicename; ?></td>
+                <td class="table-success"><?php echo $user_data->user_email; ?></td>
+            </tr>
+        <?php endforeach;?>
     </tbody>
     </table>
    
