@@ -13,4 +13,5 @@ define("USER_RECAPTCH_TEMPLATE",plugin_dir_path(__FILE__)."template/");
 if (is_admin()) {
     include USER_RECAPTCH . "admin/menu.php";
     include USER_RECAPTCH . "admin/register_all_assets_in_admin.php";
+    include USER_RECAPTCH . "admin/core.php";
 }
