@@ -31,41 +31,59 @@ function main_menus()
         "first_submenu", 
     );
 }
-
+// main menu
 function main_menu()
 {
-    // pagination 
     global $wpdb;
 
+    // pagination 
     $Get_page = !isset($_GET["item"]) ? "1" : $_GET["item"];
-    $record_per_page = 10;
-    $get_data_for_pagination = $wpdb->get_results("Select * from {$wpdb->users}");
+    $record_per_page = 5;
+
+    $get_data_for_pagination = $wpdb->get_results("Select * from {$wpdb->users} 
+    WHERE user_email LIKE '%gmail%' OR user_email LIKE '%yahoo%' "
+    );
+    
     $number_of_pagination =ceil($wpdb->num_rows/$record_per_page);
     
     if ($Get_page == $Get_page) {
         $get_page_to_int = intval($Get_page);
         $start_value = ($get_page_to_int - 1)*$record_per_page;
-        $pagination_complete = $wpdb->get_results("Select * from {$wpdb->users} LIMIT ".$start_value.",".$record_per_page);
-    }
+       
+        $pagination_complete = $wpdb->get_results("Select * from {$wpdb->users} 
+        WHERE user_email LIKE '%gmail%' OR user_email LIKE '%yahoo%' 
+        LIMIT ".$start_value.",".$record_per_page
+        );
     
+    }
+
     // add UI 
     $page_url_for_tab = $_GET["page"];
     include USER_RECAPTCH_TEMPLATE ."admin/main_menu.php";
 }
+
+// first Submenu 
 function first_submenu()
 {
     // pagination 
     global $wpdb;
 
     $Get_page = !isset($_GET["item"]) ? "1" : $_GET["item"];
-    $record_per_page = 3;
-    $get_data_for_pagination = $wpdb->get_results("Select * from {$wpdb->users}");
-    $number_of_pagination =ceil($wpdb->num_rows/$record_per_page);
+    $record_per_page = 5;
+    
+    $get_data_for_pagination = $wpdb->get_results("Select * from {$wpdb->users} 
+    WHERE user_email NOT LIKE '%gmail%' and user_email NOT LIKE '%yahoo%'"
+    );
+
+    $number_of_pagination =ceil($wpdb->num_rows / $record_per_page);
     
     if ($Get_page == $Get_page) {
         $get_page_to_int = intval($Get_page);
         $start_value = ($get_page_to_int - 1)*$record_per_page;
-        $pagination_complete = $wpdb->get_results("Select * from {$wpdb->users} LIMIT ".$start_value.",".$record_per_page);
+        $pagination_complete = $wpdb->get_results("Select * from {$wpdb->users} 
+        WHERE user_email NOT LIKE '%gmail%' and user_email NOT LIKE '%yahoo%'
+        LIMIT ".$start_value.",".$record_per_page
+        );
     }
 
     // get badusers
