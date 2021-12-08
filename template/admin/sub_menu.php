@@ -22,7 +22,7 @@ include "navbar.php";
         <?php  foreach($pagination_complete as $data_as_complete_pagination ):?>
         <tr>
             <th scope="row"><?php echo $data_as_complete_pagination->ID; ?></th>
-            <td class="table-secondary"<?php echo $data_as_complete_pagination->user_nicename; ?></td>
+            <td class="table-secondary"><?php echo $data_as_complete_pagination->user_nicename; ?></td>
             <td class="table-danger"><?php echo $data_as_complete_pagination->user_email; ?></td>
         </tr>
         <?php endforeach;?>
