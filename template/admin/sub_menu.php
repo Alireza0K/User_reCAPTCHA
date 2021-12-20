@@ -16,6 +16,7 @@ include "navbar.php";
         <th scope="col">#</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
+        <th scope="col">Operations</th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +25,10 @@ include "navbar.php";
             <th scope="row"><?php echo $data_as_complete_pagination->ID; ?></th>
             <td class="table-secondary"><?php echo $data_as_complete_pagination->user_nicename; ?></td>
             <td class="table-danger"><?php echo $data_as_complete_pagination->user_email; ?></td>
-        </tr>
+            <th>
+                <a href="<?php echo add_query_arg(['Action' => 'Eliminate_bad_user' , 'Item' => $data_as_complete_pagination->ID ]); ?>" class="btn btn-primary">Eliminate</a>
+            </th>
+        </tr
         <?php endforeach;?>
     </tbody>
     </table>

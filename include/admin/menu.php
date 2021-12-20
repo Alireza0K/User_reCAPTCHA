@@ -86,8 +86,13 @@ function first_submenu()
         );
     }
 
-    // get badusers
-
+    // Delete bad user 
+    $Item = $_GET["Item"];
+    $Action = $_GET["Action"];
+    
+    if ($Action == "Eliminate_bad_user") {
+        $wpdb->delete($wpdb->users,["ID"=>$Item]);
+    }
 
     // add UI
     $page_url_for_tab = $_GET["page"];
