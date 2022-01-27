@@ -42,12 +42,25 @@ function main_menu()
         WHERE user_email LIKE '%gmail%' OR user_email LIKE '%yahoo%' 
         LIMIT ".$start_value.",".$record_per_page
         );
-    
     }
 
     // get this user login name or any information
     $Current_user_name = getenv('USERNAME');
 
+    // Send Email to correct user
+    if ($_GET["Action"] == "Send_email") {
+        $User_ID_for_send_email = $_GET["which-user"];
+        
+        $get_data_for_send_email = $wpdb->get_results("Select * from {$wpdb->users} 
+        WHERE ID = $User_ID_for_send_email"
+        );
+
+        foreach($get_data_for_send_email as $get_email_for_send_email){
+            $User_email_for_send_email = $get_email_for_send_email->user_email;
+        }
+        
+        wp_mail($User_email_for_send_email , "Hello" , "We are very happy that you are a complete user and we are proud to have users like you $User_email_for_send_email");
+    }
 
     // add UI 
     $page_url_for_tab = $_GET["page"];
