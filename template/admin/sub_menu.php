@@ -4,7 +4,7 @@ wp_enqueue_script("bootstrap_min");
 wp_enqueue_style("bootstrap_min_css");
 include "navbar.php";
 ?>
-<div class=" container">
+<div class=" container" dir="ltr">
     <br>
     <div class="col d-flex justify-content-center">
     <h2  class="btn btn-outline-danger btn-lg d-flex justify-content-center">Bad User</h2>
