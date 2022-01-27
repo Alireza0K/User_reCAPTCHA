@@ -37,6 +37,7 @@ include "navbar.php";
         <th scope="col" class="">id</th>
         <th scope="col">User name</th>
         <th scope="col">Email</th>
+        <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -45,6 +46,7 @@ include "navbar.php";
                 <th scope="row"><?php echo $user_data->ID; ?></th>
                 <td class="table-secondary"><?php echo $user_data->user_nicename; ?></td>
                 <td class="table-success"><?php echo $user_data->user_email; ?></td>
+                <td class="table-success"><a href="<?php echo add_query_arg(["Action"=>"Send_email","which-user"=>$user_data->ID]);?>" class="btn btn-success">Send Email</a></td>
             </tr>
         <?php endforeach;?>
     </tbody>
