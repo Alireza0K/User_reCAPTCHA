@@ -4,16 +4,37 @@ wp_enqueue_script("bootstrap_min");
 wp_enqueue_style("bootstrap_min_css");
 include "navbar.php";
 ?>
-<div class=" container">
+<div class=" container" dir="ltr">
     <br>
     <div class="col d-flex justify-content-center">
-    <h2  class="btn btn-outline-danger btn-lg d-flex justify-content-center">Bad User</h2>
+        <button type="button" class="btn btn-lg  btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Bad User
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bad User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <b>in this tab : </b><br>
+                    this plugin check users email and 
+                    Collect users with the wrong email. 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
     <br>
     <table class="table">
     <thead>
         <tr>
-        <th scope="col">#</th>
+        <th scope="col">id</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">Operations</th>

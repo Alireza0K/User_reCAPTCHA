@@ -3,8 +3,8 @@
  * Plugin Name: User reCaptcha
  * Description: This plugin for check email and if email not success send a email to verify email 
  * Plugin URI: https://github.com/Alireza0K/User_reCAPTCHA
- * Author: Alireza0k
- * Version: 1.0.1
+ * Author: Alireza0K
+ * Version: 1.0.2
  * Author URI: https://github.com/Alireza0K/
 */
 define("USER_RECAPTCH",plugin_dir_path(__FILE__)."include/");

@@ -45,6 +45,10 @@ function main_menu()
     
     }
 
+    // get this user login name or any information
+    $Current_user_name = getenv('USERNAME');
+
+
     // add UI 
     $page_url_for_tab = $_GET["page"];
     include USER_RECAPTCH_TEMPLATE ."admin/main_menu.php";
