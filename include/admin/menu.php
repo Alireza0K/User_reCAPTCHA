@@ -48,7 +48,7 @@ function main_menu()
     $Current_user_name = getenv('USERNAME');
 
     // Send Email to correct user
-    if ($_GET["Action"] == "Send_email") {
+    if ( !isset($_GET["Action"]) ? null : $_GET["Action"]  == "Send_email") {
         $User_ID_for_send_email = $_GET["which-user"];
         
         $get_data_for_send_email = $wpdb->get_results("Select * from {$wpdb->users} 
@@ -92,8 +92,8 @@ function first_submenu()
     }
 
     // Delete bad user 
-    $Item = $_GET["Item"];
-    $Action = $_GET["Action"];
+    $Item = !isset($_GET["Item"]) ? null : $_GET["Item"];
+    $Action = !isset($_GET["Action"]) ? null : $_GET["Action"];
     
     if ($Action == "Eliminate_bad_user") {
         $wpdb->delete($wpdb->users,["ID"=>$Item]);
